@@ -480,6 +480,10 @@ public class UIUtils {
         return confirmAction(shell, title, question, DBIcon.STATUS_QUESTION);
     }
 
+    public static boolean confirmDangerousAction(@Nullable Shell shell, String title, String question) {
+        return confirmAction(shell, title, question, DBIcon.STATUS_WARNING);
+    }
+
     public static boolean confirmAction(@Nullable Shell shell, String title, String message, @NotNull DBPImage image) {
         final Reply[] reply = {null};
         syncExec(() -> reply[0] = MessageBoxBuilder.builder(shell != null ? shell : getActiveWorkbenchShell())
